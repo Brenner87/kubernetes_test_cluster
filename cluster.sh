@@ -4,7 +4,7 @@ set -e
 
 me=$(basename "$0")
 
-if [[ ! $1 =~ ^(create|destroy|halt)$ ]]; then
+if [[ ! $1 =~ ^(create|destroy|halt|status)$ ]]; then
 echo "Usage: $(basename $0) <create|destroy|halt>"
 exit 1
 fi
@@ -40,5 +40,9 @@ fi
 if [[ $1 == 'halt' ]]; then
     [[ -f .cluster_created ]] || ( echo "Cluster was not created. Exiting..."; exit 1 )
     vagrant halt
+fi
+
+if [[ $1 == 'status' ]]; then
+    vagrant status
 fi
 

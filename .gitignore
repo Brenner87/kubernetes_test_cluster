@@ -3,3 +3,4 @@
 **/.node_num
 **/.cluster_created
 **/ansible/hosts
+**/.vagrant
