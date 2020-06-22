@@ -28,11 +28,21 @@
        name: kubelet=1.18.0-00
        state: present
        update_cache: true
-
+    
    - name: install kubeadm
      apt:
        name: kubeadm=1.18.0-00
        state: present
+
+   - name: enable docker
+     service:
+       name: docker
+       enabled: yes
+
+   - name: enable kubelet
+     service:
+       name: docker
+       enabled: yes
 
 - hosts: masters
   become: yes

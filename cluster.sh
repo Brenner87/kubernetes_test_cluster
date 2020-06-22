@@ -4,7 +4,7 @@ set -e
 
 me=$(basename "$0")
 
-if [[ ! $1 =~ ^(create|destroy|halt|status)$ ]]; then
+if [[ ! $1 =~ ^(create|destroy|halt|status|start|suspend)$ ]]; then
 echo "Usage: $(basename $0) <create|destroy|halt>"
 exit 1
 fi
@@ -35,6 +35,7 @@ if [[ $1 == 'destroy' ]]; then
     vagrant destroy -f
     rm -f ./.node_num
     rm -f ~/.kube/config
+    rm -f .cluster_created
 fi
 
 if [[ $1 == 'halt' ]]; then
@@ -46,3 +47,12 @@ if [[ $1 == 'status' ]]; then
     vagrant status
 fi
 
+if [[ $1 == 'start' ]]; then
+    [[ -f .cluster_created ]] && vagrant up
+    [[ -f .cluster_created ]] || ( echo "Cluster is not created. Exiting..."; exit 1 )
+fi
+
+if [[ $1 == 'suspend' ]]; then
+    [[ -f .cluster_created ]] && vagrant suspend
+    [[ -f .cluster_created ]] || ( echo "Cluster is not created. Exiting..."; exit 1 )
+fi
