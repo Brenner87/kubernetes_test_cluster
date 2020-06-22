@@ -1,0 +1,13 @@
+- hosts: all
+
+- name: Run initial user setup
+  import_playbook: initial.yml
+
+- name: Install k8s dependencies
+  import_playbook: kube-dependencies.yml
+
+- name: Init k8s master
+  import_playbook: init-master.yml
+
+- name: Init k8s nodes
+  import_playbook: init-nodes.yml

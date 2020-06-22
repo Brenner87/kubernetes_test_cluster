@@ -1,0 +1,4 @@
+Host *
+  Port 22
+  User vagrant
+  IdentityFile ~/.ssh/vagrant_key
