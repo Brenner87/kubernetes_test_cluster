@@ -24,8 +24,10 @@ if [[ $1 == 'create' ]]; then
     [[ -n $node_num ]] && echo $node_num > .node_num
     echo -e 'y' | ssh-keygen -t rsa -f ./ansible/project.key -q -P ""
     vagrant up
-    #docker build -t ansible:latest .
-    docker run --rm -ti -v $PWD/ansible:/ansible  ansible:latest ansible-playbook -i hosts setup-kube.yml
+    image=$(docker image ls -q ansible:latest)
+    [[ -z $image ]] && docker build -t ansible:latest .
+    docker run --rm -ti -v $PWD/ansible:/ansible $image ansible-playbook -i hosts setup-kube.yml
+    ls ~/.kube || mkdir ~/.kube
     ln -sf $PWD/config ~/.kube/config
     date > .cluster_created
 fi
