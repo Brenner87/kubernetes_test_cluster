@@ -11,6 +11,8 @@ Usage:
     ./cluster.sh create - to create the cluser. After executing this command you will be asked to enter number of nodes
     ./cluster.sh destroy - destroy cluster
     ./cluster.sh halt - poweroff cluster
+    ./cluster.sh status - display cluster status
+
 
 Default configs:
     Default configs can be overwritten in Vagrantfile
