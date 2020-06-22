@@ -18,6 +18,6 @@ Usage:
 
 Default configs:
     Default configs can be overwritten in Vagrantfile
-    network = '192.168.47.0/24'
-    cpu_num = 2
-    memory = 2048
+    ```network = '192.168.47.0/24'```\n
+    ```cpu_num = 2```\n
+    ```memory = 2048```\n
