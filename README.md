@@ -8,11 +8,13 @@ Vagrant: https://www.vagrantup.com/downloads.html
 Docker: https://www.docker.com/products/docker-desktop
 
 Usage:
-    ```./cluster.sh status``` - display cluster status
-    ```./cluster.sh create``` - to create the cluser. After executing this command you will be asked to enter number of nodes
-    ```./cluster.sh start``` - start previoselly created cluster
-    ```./cluster.sh suspend``` - freez current cluster and free used resources
-    ```./cluster.sh destroy``` - destroy cluster
+    ```
+    ./cluster.sh status - display cluster status
+    ./cluster.sh create - to create the cluser. After executing this command you will be asked to enter number of nodes
+    ./cluster.sh start - start previoselly created cluster
+    ./cluster.sh suspend - freez current cluster and free used resources
+    ./cluster.sh destroy - destroy cluster
+    ```
 
 
 
