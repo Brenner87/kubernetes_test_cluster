@@ -4,9 +4,9 @@ OS requirements: Linux or MacOS
 
 To be able to use this tool you have to have installed following software:
 
-    Virtual Box: https://www.virtualbox.org/wiki/Downloads  
-    Vagrant: https://www.vagrantup.com/downloads.html  
-    Docker: https://www.docker.com/products/docker-desktop  
+Virtual Box: https://www.virtualbox.org/wiki/Downloads  
+Vagrant: https://www.vagrantup.com/downloads.html  
+Docker: https://www.docker.com/products/docker-desktop  
 
 Usage:
 
