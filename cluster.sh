@@ -26,7 +26,7 @@ if [[ $1 == 'create' ]]; then
     vagrant up
     image=$(docker image ls -q ansible:latest)
     [[ -z $image ]] && docker build -t ansible:latest .
-    docker run --rm -ti -v $PWD/ansible:/ansible $image ansible-playbook -i hosts setup-kube.yml
+    docker run --rm -ti -v $PWD/ansible:/ansible ansible:latest ansible-playbook -i hosts setup-kube.yml
     ls ~/.kube || mkdir ~/.kube
     ln -sf $PWD/config ~/.kube/config
     date > .cluster_created
